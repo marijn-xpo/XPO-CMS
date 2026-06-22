@@ -1,0 +1,23 @@
+name: CI
+on:
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "22" }
+      - run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Seed + self-tests
+        run: |
+          npm run seed
+          NODE_NO_WARNINGS=1 npx tsx src/selftest.ts
+          node src/menu-test.mjs
+          node src/admin-check.mjs
+          NODE_NO_WARNINGS=1 npx tsx src/perf-budget.ts
+      - name: Dependency audit (faalt bij hoge/kritieke CVE's)
+        run: npm audit --audit-level=high

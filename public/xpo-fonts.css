@@ -1,0 +1,5 @@
+/* Zelf-gehoste fonts (privacy + snelheid, geen render-blocking Google-call).
+   Plaats de woff2-bestanden in public/fonts/. Zonder die bestanden valt de browser
+   via local()/system-ui netjes terug, dus de pagina rendert altijd. */
+@font-face{font-family:"Saira Semi Condensed";font-style:normal;font-weight:500 700;font-display:swap;src:local("Saira Semi Condensed"),url("/assets/fonts/saira-semi-condensed.woff2") format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 800;font-display:swap;src:local("Inter"),url("/assets/fonts/inter.woff2") format("woff2");}

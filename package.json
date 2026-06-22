@@ -1,0 +1,36 @@
+{
+  "name": "xpo-cms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "cross-env NODE_NO_WARNINGS=1 tsx watch src/main.ts",
+    "start": "cross-env NODE_NO_WARNINGS=1 tsx src/main.ts",
+    "migrate": "cross-env NODE_NO_WARNINGS=1 tsx src/db/migrate.ts",
+    "seed": "cross-env NODE_NO_WARNINGS=1 tsx src/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "backup": "cross-env NODE_NO_WARNINGS=1 tsx src/db/backup.ts",
+    "migrate:pg": "cross-env NODE_NO_WARNINGS=1 tsx -e \"import('./src/db/database.ts').then(m=>m.migratePostgres()).then(r=>console.log('pg applied',r.applied))\"",
+    "perf": "cross-env NODE_NO_WARNINGS=1 tsx src/perf-budget.ts"
+  },
+  "dependencies": {
+    "@fastify/cors": "^10.0.1",
+    "@fastify/static": "^9.1.3",
+    "fastify": "^5.8.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@vue/compiler-dom": "^3.4.21",
+    "cross-env": "^7.0.3",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "optionalDependencies": {
+    "ioredis": "^5.4.0",
+    "pg": "^8.12.0",
+    "sharp": "^0.33.0"
+  }
+}

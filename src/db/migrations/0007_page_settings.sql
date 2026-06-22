@@ -1,0 +1,12 @@
+-- WordPress-achtige pagina/post-instellingen.
+ALTER TABLE pages ADD COLUMN excerpt        TEXT NOT NULL DEFAULT '';
+ALTER TABLE pages ADD COLUMN featured_image TEXT NOT NULL DEFAULT '';
+ALTER TABLE pages ADD COLUMN menu_order     INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE pages ADD COLUMN visibility     TEXT NOT NULL DEFAULT 'public';
+ALTER TABLE pages ADD COLUMN password       TEXT NOT NULL DEFAULT '';
+ALTER TABLE pages ADD COLUMN comments_open  INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE posts ADD COLUMN featured_image TEXT NOT NULL DEFAULT '';
+ALTER TABLE posts ADD COLUMN visibility     TEXT NOT NULL DEFAULT 'public';
+ALTER TABLE posts ADD COLUMN password       TEXT NOT NULL DEFAULT '';
+ALTER TABLE posts ADD COLUMN comments_open  INTEGER NOT NULL DEFAULT 1;
+ALTER TABLE posts ADD COLUMN sticky         INTEGER NOT NULL DEFAULT 0;
