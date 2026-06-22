@@ -32,6 +32,6 @@
   "optionalDependencies": {
     "ioredis": "^5.4.0",
     "pg": "^8.12.0",
-    "sharp": "^0.33.0"
+    "sharp": "^0.35.2"
   }
 }
