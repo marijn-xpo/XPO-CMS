@@ -1,4 +1,4 @@
-import { JSDOM } from "/home/claude/out/node_modules/jsdom/lib/api.js";
+import { JSDOM } from "jsdom";
 import { readFileSync } from "node:fs";
 
 const lib = readFileSync(new URL("../public/xpo-menus.js", import.meta.url), "utf8");
