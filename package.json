@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
-    "@vue/compiler-dom": "^3.4.21",
+    "@vue/compiler-dom": "^3.5.38",
     "cross-env": "^7.0.3",
     "jsdom": "^29.1.1",
     "tsx": "^4.19.1",
